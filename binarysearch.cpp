@@ -4,10 +4,10 @@ using namespace std;
 int binarySearch(int arr[], int leftindex, int rightindex, int x)
 {
 	if (rightindex >= leftindex) {
-		int mid = (leftindex + rightindex) / 2;
+		int mid = leftindex+(rightindex-leftindex)/2;
 		if (arr[mid] == x)
 			return mid;
-		if (arr[mid] > x)
+		else if (arr[mid] > x)
 			return binarySearch(arr, leftindex, mid - 1, x);
         return binarySearch(arr, mid + 1, rightindex, x);
 	}
